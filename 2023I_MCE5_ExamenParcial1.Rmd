@@ -64,7 +64,14 @@ library(readxl)
 library(ggplot2)
 especies_raras <- read_excel("C:/Users/USUARIO/Desktop/examendavidg/especies_raras.xlsx")
 View(especies_raras)
-sitios = c("archidona", "tena", "puyo")
+sitios = c("archidona", "tena", "muyuna","palmas" )
+afinidad = c("bajo", "medio", "alto")
+rareza = c("bajo", "alto")
+facilitación = c("negativo", "positivo")
+rendimiento = c("bajo", "alto")
+especie = c("espcieA", "especieB", "especieC", "especieD", "especieE", "especieF", "especieG", "especieH", "especieI", "especieJ")
+datos <- data.frame(sitios, afinidad, rareza, facilitación, rendimiento, especie)
+
 
 ggplot(especies_raras, aes(x = especie, fill = rendimiento)) +
   geom_bar(stat = "count", position = "dodge") +
@@ -102,11 +109,49 @@ En una hoja de papel dibuje un gráfico hipotetico basado en la figura 4 del art
 
 En esta parte debe aplicar las regresiones lineal, linearizada y generalizada sobre la presencia de ácaros en musgos. Una de las especies analizadas es *Galumma sp.* cuya abundancia presencia y proporción es posiblemente afectada por las siguiente cinco variables ambientales como densidad de sustrato, el tipo de sustrato, el contenido de agua, si se tiene o no arbustos en la cercanía y la topografía del suelo. Utilice la data ```mites.csv``` y responda los siguientes items. 
 
-- ¿Cuál es el efecto de las variables ambientales en la i) abundancia de ii) abundancia y iii) proporción de la especie *Galumma sp.*?
+```{r}
+library(agricolae)
+View(mites)
+str(mites)
+summary(mites)
+```
+
+- ¿Cuál es el efecto de las variables ambientales en la i) abundancia de ii) presencia y iii) proporción de la especie *Galumma sp.*?
+```{r}
+data(mites)
+x <- AbundaceGaluma:Ocurrence:Proportion 
+y <- c(SubstrateDensity, WaterContent, Shrub, Topography)
+data(mites)
+library(ggplot2)
+grafico <- ggplot(mites, aes(x = WaterSubstrate, y = AbundaceGaluma)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(title = "Regresión Lineal", x = "Variable ambiental", y = "abundancia")
+print(grafico)
+
+
+
+
+```
+
+
 
 Para responder esta pregunta debe generar las hipótesis y probar las hipótesis (código y explicación), asimismo visualizar con etiquetas adecuadas. Considere realizar lo siguiente:
 
 - Realizar un análisis exploratorio.
+```{r analisis exploratorio}
+library(ggplot2)
+data(mites)
+View(mites)
+str(mites)
+summary(mites)
+head(mites)
+dim(mites)
+
+ggplot(mites, aes(x = Substrate, y = AbundanceGalumma)) +
+  geom_point() + geom_smooth(method = "lm", se = FALSE)
+```
+
 
 - Realizar regresiones lineales de cada variable de respuesta y variables efectoras, univariable o multivariable. Verifique los supuestos de la regresión. 
 
