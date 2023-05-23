@@ -52,16 +52,24 @@ En el estudio realizado por <a href="https://doi.org/10.1111/jvs.13185">Sanches 
 
 **Respuesta:**
 
+H0: *La facilitación interespecífica no tiene efecto en la diversidad a lo largo del tiempo de vida de la sp, y no evita, ni reduce la extinción de especies localmente raras en etapas juveniles entre sp diferentes* 
+Ha: *La facilitación interespecífica efecta positivamente en la diversidad de sp a lo largo del tiempo de vida, no existe extinción de spp localmente raras juveniles y reduce las disparidades entre vecinos de diferentes sp*
 
 ## Muestra
 
 Replique el diseño realizado en el artículo en localidades del Ecuador y genere el archivo **rarespecies.csv**. 
 
 ```{r crd_anfibios}
-sitios = c("Sitio1", "Chuquitos", "Chompi")
+library(readxl)
+especies_raras <- read_excel("C:/Users/USUARIO/Desktop/examendavidg/especies_raras.xlsx")
+View(especies_raras)
+sitios = c("archidona", "tena", "puyo")
+
 
 ```
 Explique el resultado muestra: 
+
+La tabla consta de variables consta de variables como facilitación, rarera, afinidad al ambiente estresante dependiendo si se encunetra en un ab,biente estresante bajo, medio o alto dependiendo del sitio, las mas favorecidas son las spp con baja afinidad al ambiente con bajo estres  y raras.
 
 **Respuesta:**
 
@@ -71,7 +79,8 @@ Explique el resultado muestra:
 ¿Cuáles son sus variables (dependiente(s) e independiente(s))? Explique cada una de las variables
 
 **Respuesta:**
-
+Las variable dependiente: es el rendimiento de las plantas 
+las variables independientes: facilitación, rarera, afinidad al ambiente.
 
 ## Gráfica e hipótesis
 En una hoja de papel dibuje un gráfico hipotetico basado en la figura 4 del artículo mostrando [Coloque adecuadamente las leyendas]. Describa su figura justifique su razonamiento.
