@@ -61,18 +61,25 @@ Replique el diseño realizado en el artículo en localidades del Ecuador y gener
 
 ```{r crd_anfibios}
 library(readxl)
+library(ggplot2)
 especies_raras <- read_excel("C:/Users/USUARIO/Desktop/examendavidg/especies_raras.xlsx")
 View(especies_raras)
 sitios = c("archidona", "tena", "puyo")
+
+ggplot(especies_raras, aes(x = especie, fill = rendimiento)) +
+  geom_bar(stat = "count", position = "dodge") +
+  labs(x = "especie", y = "Conteo", fill = "rendimiento") +
+  ggtitle("Gráfico de barras - Rendimiento por Especie")
 
 
 ```
 Explique el resultado muestra: 
 
-La tabla consta de variables consta de variables como facilitación, rarera, afinidad al ambiente estresante dependiendo si se encunetra en un ab,biente estresante bajo, medio o alto dependiendo del sitio, las mas favorecidas son las spp con baja afinidad al ambiente con bajo estres  y raras.
+
 
 **Respuesta:**
 
+La tabla consta de variables consta de variables como facilitación, rarera, afinidad al ambiente estresante dependiendo si se encunetra en un ab,biente estresante bajo, medio o alto dependiendo del sitio, las mas favorecidas son las spp con baja afinidad al ambiente con bajo estres  y raras.
 
 
 ## Variables
