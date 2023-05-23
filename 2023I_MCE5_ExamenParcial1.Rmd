@@ -117,6 +117,7 @@ summary(mites)
 ```
 
 - ¿Cuál es el efecto de las variables ambientales en la i) abundancia de ii) presencia y iii) proporción de la especie *Galumma sp.*?
+
 ```{r}
 data(mites)
 x <- AbundaceGaluma:Ocurrence:Proportion 
@@ -137,6 +138,13 @@ print(grafico)
 
 
 Para responder esta pregunta debe generar las hipótesis y probar las hipótesis (código y explicación), asimismo visualizar con etiquetas adecuadas. Considere realizar lo siguiente:
+
+*respuesta*
+
+
+H0: *No existe una relación significativa entre las variables ambientales con la abundaci y proporción de galuma sp en los musgo*
+
+Ha: *Existe relación significativa entre las variables ambientales con la abundancia y proporción de galumma sp en los musgoos*
 
 - Realizar un análisis exploratorio.
 ```{r analisis exploratorio}
