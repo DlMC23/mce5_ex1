@@ -147,6 +147,7 @@ H0: *No existe una relación significativa entre las variables ambientales con l
 Ha: *Existe relación significativa entre las variables ambientales con la abundancia y proporción de galumma sp en los musgoos*
 
 - Realizar un análisis exploratorio.
+
 ```{r analisis exploratorio}
 library(ggplot2)
 data(mites)
